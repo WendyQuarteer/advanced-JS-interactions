@@ -14,6 +14,10 @@ function slide() {//set function to change images.
 }
 setInterval(slide, 2000);//images will change every 2 seconds.
 
+/////
+carousel[0].style.backgroundAttachment = "fixed";//fix background for parallax-effect.
+
+
 
 
 

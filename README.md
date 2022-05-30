@@ -15,7 +15,7 @@ Go check out the HTML file! Everything you need to know is there!
 ## Must-have features
 - [x] add pictures for carousel slider.
 - [x] make images slide.
-- [] A parallax carousel
+- [x] A parallax carousel
 - [] A collage with popup for more details
 - [] Hover image above every Pokemon in the text
 - [] Functional chaser or runner circle
