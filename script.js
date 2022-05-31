@@ -107,9 +107,9 @@ function toCollage() {//function to add images to the collage.
         tiles[i].style.backgroundImage = "url(" + fruits[i].url + ")";
     }
 }
-
 toCollage()//call the function
-let click = 0;
+
+let click = 0;//enlarge & display info when clicked
 tiles.forEach((tile, i) => { // set function for each tile per index-number
     tile.addEventListener("click", function infoEnlarge() {
         click += 1;
@@ -125,7 +125,7 @@ tiles.forEach((tile, i) => { // set function for each tile per index-number
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const pokemon = document.querySelectorAll(".poke");
-pokemon.forEach((poke, i) => {
+pokemon.forEach((poke) => {
     poke.onmouseover = function popup() {
         poke.querySelector("img").style.display = "block";
     }
@@ -134,6 +134,21 @@ pokemon.forEach((poke, i) => {
     }
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.getElementById("chaserBox").addEventListener("mousemove", (e) => {
+    let x = e.clientX; //read-only property of mouseEvent to get positions
+    let y = e.clientY; //
+    // let position = "X: " + x + " Y: " + y;
+    //document.getElementById("position").innerHTML = position;//write positions to screen
+
+    let chaser = document.getElementById("chaser");
+    chaser.style.top = y + "px";
+    chaser.style.left = x + "px";
+})
+
+
+
+
 
 //Array.from(document.querySelectorAll(".letter")).forEach(el => {
 //el.innerText = randomLetter();
