@@ -13,6 +13,7 @@ function slide() {//set function to change images.
         slideIndex = 0;
     }
 }
+
 setInterval(slide, 2000);//images will change every 2 seconds.
 
 carousel[0].style.backgroundAttachment = "fixed";//fix background for parallax-effect.
@@ -21,7 +22,7 @@ carousel[0].style.backgroundAttachment = "fixed";//fix background for parallax-e
 
 const fruits = [
     {
-       name: "Blackberry",
+        name: "Blackberry",
         url: "images/blackberry.jpg",
         info: "An edible soft fruit consisting of a cluster of soft purple-black drupelets.",
     },
@@ -101,17 +102,31 @@ const fruits = [
         info: "A round fruit containing a lot of juice that is sour like a lemon but smaller and green, or the small tree on which this fruit grows.",
     },
 ]
+let tiles = document.querySelectorAll(".image");
 
 function toCollage() {//function to add images to the collage.
-    let tiles = document.querySelectorAll(".image");
     for (let i = 0; i < fruits.length; i++) {
         tiles[i].style.backgroundImage = "url(" + fruits[i].url + ")";
     }
 }
+
 toCollage()//call the function
+let click = 0;
+tiles.forEach((tile, i) => { // set function for each tile per index-number
+    tile.addEventListener("click", function infoEnlarge() {
+        click += 1;
+        if (click === 1) {
+            tile.style.transform = "scale(1.5)";
+            tile.innerText = (fruits[i].info);
+        } else {
+            click = 0;
+            tile.style.transform = "scale(1)";
+            tile.innerText = "";
+        }
+    })
+})
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 //Array.from(document.querySelectorAll(".letter")).forEach(el => {

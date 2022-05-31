@@ -8,8 +8,9 @@ body{
 
 .image{
     height: 250px;
-    background: midnightblue;
+    background-color: white;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .poke{
