@@ -9,6 +9,7 @@ body{
 .image{
     height: 250px;
     background: midnightblue;
+    background-size: contain;
 }
 
 .poke{
